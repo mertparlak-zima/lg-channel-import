@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Build output — regenerate with scripts/build_channel_list.py
+output/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
