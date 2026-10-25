@@ -1,0 +1,26 @@
+name: lg-tv-channel-sort-ci
+
+services:
+  runner:
+    image: dt-ci-runner:latest
+    container_name: lg-tv-channel-sort-docker-1
+    restart: unless-stopped
+    environment:
+      REPO_URL: https://github.com/mertparlak-zima/lg-channel-import
+      RUNNER_NAME: lg-tv-channel-sort-docker-1
+      RUNNER_LABELS: docker,lg-tv-channel-sort
+    entrypoint: ['/bin/bash', '-c']
+    command:
+      - |
+        set -e
+        mkdir -p /home/runner/_work
+        chown -R runner:runner /home/runner/_work
+        chown runner:runner /home/runner
+        cd /home/runner
+        while [ ! -f .runner ]; do sleep 1; done
+        exec gosu runner:runner ./run.sh
+    volumes:
+      - runner-work:/home/runner/_work
+
+volumes:
+  runner-work:

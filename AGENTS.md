@@ -51,5 +51,6 @@ Read [README](README.md), then the matching skill fully before work.
 Preserve latest-TV-export, import/recovery and device-verification rules; never
 claim a TV import PASS without testing it.
 
+- All CI runs MUST execute on the local self-hosted Docker runner `lg-tv-channel-sort-docker-1` with labels `[self-hosted, linux, x64, docker, lg-tv-channel-sort]` (`infra/runner/compose.yml`, started via `scripts/start-ci-runner.ps1`). GitHub-hosted runners (`ubuntu-latest`, etc.) are forbidden.
 - [lg-tll-channel-editing](.claude/skills/lg-tll-channel-editing/SKILL.md)
 - [lg-42lb652v-tv](.claude/skills/lg-42lb652v-tv/SKILL.md)

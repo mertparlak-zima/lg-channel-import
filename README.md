@@ -25,8 +25,12 @@ SD duplicates, test services and radios hidden.
 ├── .gitignore
 ├── reference/
 │   └── tv-export-2026-08-31.tll     # the TV's most recent export (editing base)
+├── infra/
+│   └── runner/compose.yml           # local self-hosted Docker runner (lg-tv-channel-sort-docker-1)
 ├── scripts/
-│   └── build_channel_list.py        # builds an edited list from the reference
+│   ├── build_channel_list.py        # builds an edited list from the reference
+│   ├── verify_channel_list.py       # 8-point TLL verification check (local + CI)
+│   └── start-ci-runner.ps1          # starts & registers the local Docker runner
 ├── output/                          # build output (gitignored)
 └── .claude/skills/
     ├── lg-tll-channel-editing/      # main skill: editing workflow + rules
